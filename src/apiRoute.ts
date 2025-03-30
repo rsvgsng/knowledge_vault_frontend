@@ -1,1 +1,2 @@
-export const apiRoute = "http://82.180.145.39:8090"
+export const apiRoute = "https://vaultapi.unicomate.com"
+// export const apiRoute = "https://vaultapi.unicomate.com"

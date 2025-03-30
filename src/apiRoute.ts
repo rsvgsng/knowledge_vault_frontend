@@ -1,0 +1,1 @@
+export const apiRoute = "http://82.180.145.39:8090"

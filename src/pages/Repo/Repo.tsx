@@ -52,6 +52,9 @@ const columns: ColumnDef<RepoProps>[] = [
 ]
 
 const topLanguages = [
+    { label: 'COBOL', value: 'COBOL' },
+    { label: 'PL/I', value: 'PL/I' },
+    { label: 'Delphi/Object Pascal', value: 'Delphi/Object Pascal' },
     { label: 'JavaScript', value: 'JavaScript' },
     { label: 'Python', value: 'Python' },
     { label: 'Java', value: 'Java' },
@@ -79,8 +82,6 @@ const topLanguages = [
     { label: 'Groovy', value: 'Groovy' },
     { label: 'Visual Basic .NET', value: 'Visual Basic .NET' },
     { label: 'Assembly', value: 'Assembly' },
-    { label: 'COBOL', value: 'COBOL' },
-    { label: 'PL/I', value: 'PL/I' },
     { label: 'Fortran', value: 'Fortran' },
     { label: 'Ada', value: 'Ada' },
     { label: 'VHDL', value: 'VHDL' },
@@ -88,7 +89,6 @@ const topLanguages = [
     { label: 'Shell', value: 'Shell' },
     { label: 'PowerShell', value: 'PowerShell' },
     { label: 'Tcl', value: 'Tcl' },
-    { label: 'Delphi/Object Pascal', value: 'Delphi/Object Pascal' },
     { label: 'Smalltalk', value: 'Smalltalk' },
     { label: 'Prolog', value: 'Prolog' },
     { label: 'Lisp', value: 'Lisp' },

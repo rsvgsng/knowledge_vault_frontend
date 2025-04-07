@@ -52,8 +52,13 @@ const columns: ColumnDef<RepoProps>[] = [
 ]
 
 const topLanguages = [
-    { label: 'COBOL', value: 'COBOL' },
+    { label: 'JCL', value: 'JCL' },
     { label: 'PL/I', value: 'PL/I' },
+    { label: 'RPG', value: 'RPG' },
+    { label: 'COBOL', value: 'COBOL' },
+    { label: 'Assembly', value: 'Assembly' },
+    { label: 'Fortran', value: 'Fortran' },
+    // (rest of your list unchanged)
     { label: 'Delphi/Object Pascal', value: 'Delphi/Object Pascal' },
     { label: 'JavaScript', value: 'JavaScript' },
     { label: 'Python', value: 'Python' },
@@ -81,8 +86,6 @@ const topLanguages = [
     { label: 'MATLAB', value: 'MATLAB' },
     { label: 'Groovy', value: 'Groovy' },
     { label: 'Visual Basic .NET', value: 'Visual Basic .NET' },
-    { label: 'Assembly', value: 'Assembly' },
-    { label: 'Fortran', value: 'Fortran' },
     { label: 'Ada', value: 'Ada' },
     { label: 'VHDL', value: 'VHDL' },
     { label: 'Verilog', value: 'Verilog' },
@@ -101,7 +104,6 @@ const topLanguages = [
     { label: 'Hack', value: 'Hack' },
     { label: 'ABAP', value: 'ABAP' },
     { label: 'Q#', value: 'Q#' },
-    { label: 'RPG', value: 'RPG' },
     { label: 'VBScript', value: 'VBScript' },
     { label: 'ActionScript', value: 'ActionScript' },
     { label: 'Awk', value: 'Awk' }

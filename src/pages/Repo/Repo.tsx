@@ -58,7 +58,6 @@ const topLanguages = [
     { label: 'COBOL', value: 'COBOL' },
     { label: 'Assembly', value: 'Assembly' },
     { label: 'Fortran', value: 'Fortran' },
-    // (rest of your list unchanged)
     { label: 'Delphi/Object Pascal', value: 'Delphi/Object Pascal' },
     { label: 'JavaScript', value: 'JavaScript' },
     { label: 'Python', value: 'Python' },

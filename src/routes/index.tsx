@@ -1,12 +1,15 @@
 import LoginForm from "@/pages/Auth/Login";
 import SignupForm from "@/pages/Auth/Signup";
+import Files from "@/pages/Files/Files";
 import DashboardLayout from "@/pages/Home/layouts/DashboardLayout";
 import Issues from "@/pages/Issues/Issues";
 import IssueSingle from "@/pages/Issues/IssueSingle";
 import IssueVerySingle from "@/pages/Issues/IssueVerySingle";
 import Logsx from "@/pages/Logsx/Logsx";
+import Programs from "@/pages/Programs/Programs";
 import Repo from "@/pages/Repo/Repo";
 import RepoPage from "@/pages/Repo/RepoPage";
+import System from "@/pages/System/System";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
 
@@ -68,6 +71,24 @@ const router = createBrowserRouter([
             {
                 path: ':id/:issueId',
                 element: <IssueVerySingle />
+            }
+        ]
+    },
+    {
+        path: '/browse',
+        element: isLoggedIn() ? <DashboardLayout /> : <Navigate to="/login" />,
+        children: [
+            {
+                path: 'files',
+                element: <Files />
+            },
+            {
+                path: 'programs',
+                element: <Programs />
+            },
+            {
+                path: 'systems',
+                element: <System />
             }
         ]
     },

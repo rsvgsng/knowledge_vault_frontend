@@ -1,12 +1,26 @@
 import React from 'react'
-import { Home, Code, Bug, LogOut, LogsIcon } from 'lucide-react';
+import { Home, Code, Bug, LogOut, LogsIcon, FileIcon, CodeIcon, CodeXml, CodeSquareIcon, DatabaseIcon } from 'lucide-react';
 import logo from '../../../assets/logo.jpg'
 import { Outlet, useNavigate } from 'react-router-dom';
 import path from 'path';
 function DashboardLayout() {
     const links = [
         // { name: 'Dashboard', path: '/', icon: <Home size={18} /> },
-        { name: 'Repositories', path: '/repositories', icon: <Code size={18} /> },
+        {
+            name: 'Repositories', path: '/repositories', icon: <Code size={18} />,
+            sub: [
+                {
+                    name: "Files", path: '/browse/files', icon: <FileIcon size={18} />,
+                },
+                {
+                    name: "Programs", path: '/browse/programs', icon: <CodeSquareIcon size={18} />,
+                },
+                {
+                    name: "Systems", path: '/browse/systems', icon: <DatabaseIcon size={18} />,
+                }
+            ]
+
+        },
         { name: 'Issues', path: '/issues', icon: <Bug size={18} /> },
         { name: "Logs", path: "/logs", icon: <LogsIcon size={18} /> },
     ];
@@ -19,14 +33,36 @@ function DashboardLayout() {
                 <hr className="w-full border-t border-gray-200 mt-5" />
                 <div className="flex flex-col gap-2 w-full p-3">
                     {links.map((link) => (
-                        <div
-                            key={link.name}
-                            className="flex items-center gap-2 cursor-pointer hover:bg-gray-200 p-2 rounded-md"
-                            onClick={() => navigate(link.path)}
-                        >
-                            {link.icon}
-                            <span>{link.name}</span>
-                        </div>
+                        <React.Fragment>
+
+                            <div
+                                key={link.name}
+                                className="flex items-center gap-2 cursor-pointer hover:bg-gray-200 p-2 rounded-md"
+                                onClick={() => navigate(link.path)}
+                            >
+
+                                {link.icon}
+                                <span>{link.name}</span>
+                            </div>
+                            {
+                                (link.sub ?? []).length > 0 && (
+                                    <div className="ml-2" >
+                                        {link?.sub.map((sub: any) => (
+                                            <div
+                                                key={sub.name}
+                                                className="flex items-center gap-2 cursor-pointer hover:bg-gray-200 p-2 rounded-md"
+                                                onClick={() => navigate(sub.path)}
+                                            >
+                                                {sub.icon}
+                                                <span>{sub.name}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )
+                            }
+
+                        </React.Fragment>
+
                     ))}
                     <div className="flex items-center gap-2 cursor-pointer hover:bg-gray-200 p-2 rounded-md" onClick={() => {
                         const confirmation = window.confirm("Are you sure you want to logout?")
